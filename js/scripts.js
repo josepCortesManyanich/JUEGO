@@ -3,9 +3,9 @@ window.onload = function () {
   const ctx = canvas.getContext('2d');
   const startPage = document.getElementById('start-page');
   const startButton = document.getElementById('start');
-  const losePage = document.getElementById('lose-page');
-  }
-  
+  fillBack();
+    }
+    
   
 startButton.onclick = function () {
    
@@ -15,4 +15,7 @@ startButton.onclick = function () {
     game.start();
   }
 
+  function fillBack(){
+    ctx.fillRect(150,600,150,600);
+  }
 
