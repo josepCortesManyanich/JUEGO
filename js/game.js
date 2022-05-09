@@ -1,6 +1,6 @@
 class Game{
-  constructor(context) {
-    this.ctx = context;
+  constructor(ctx) {
+    this.ctx = this.ctx;
     this.mario = new Mario (0, 600, 200, 250)
     this.intervalGame = null
     this.intervalFall = null
@@ -8,10 +8,12 @@ class Game{
     this.points
 
   }
+  
 // funcion que me dibuja a mario, de momento pintamos cuadrados
   _drawMario(){
     this.ctx.fillStyle ='dark';
     this.ctx.fillRect (0,600,200,250)
+    console.log(ctx);
   }
 //funcion que me pinta las setas, de momento pintamos cuadrados
   _drawSetas(){

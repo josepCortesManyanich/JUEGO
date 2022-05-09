@@ -3,11 +3,8 @@ window.onload = function () {
   const ctx = canvas.getContext('2d');
   const startPage = document.getElementById('start-page');
   const startButton = document.getElementById('start');
-  fillBack();
-    }
-    
-  
-startButton.onclick = function () {
+
+  startButton.onclick = function () {
    
     startPage.style = "display: none";
     canvas.classList.remove('hidden');
@@ -17,5 +14,9 @@ startButton.onclick = function () {
 
   function fillBack(){
     ctx.fillRect(150,600,150,600);
+    console.log(ctx)
   }
-
+ 
+    }
+    
+  
