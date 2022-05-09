@@ -5,7 +5,7 @@ class Game{
     this.intervalGame = null
     this.intervalFall = null
     this.setas = [];
-    this.points
+    this.points = null;
 
   }
   
