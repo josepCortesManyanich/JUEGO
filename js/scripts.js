@@ -5,12 +5,14 @@ window.onload = function () {
   const startButton = document.getElementById('start');
 
   startButton.onclick = function () {
+   
     startPage.style = "display: none";
     canvas.classList.remove('hidden');
     const game = new Game(ctx);
     game.start();
   }
-  // Aquí no añadas funciones de pintado, todo en game 
-}
     
+  }
+ 
+      
   

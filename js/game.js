@@ -1,7 +1,7 @@
 class Game{
   constructor(ctx) {
     this.ctx = ctx;
-    this.mario = new Mario(150, 599, 30, 50);
+    this.mario = new Mario(150, 500, 100, 100);
     this.intervalGame = undefined;
     this.intervalFall = undefined;
     this.setas = [];
@@ -13,25 +13,23 @@ class Game{
   _drawMario() {
     this.ctx.fillStyle = 'red';
     this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
-    console.log(this.ctx)
+    
   }
-
- 
+  
   
    _drawSetas(){
-    this.setas.forEach(() => {
-    this.ctx.fillStyle = 'grey';
-    this.ctx.fillRect(this.setas.x, this.setas.y, this.setas.width, this.setas.height);
+    this.setas.forEach((elem) => {
+       this.ctx.fillStyle = 'purple';
+       this.ctx.fillRect(elem.x, elem.y, elem.width, elem.height);
+       elem._fallDown(); 
     })
-    }
+  }
 
 
 // funcion que me las genera, math random y set Interval
   _generateSetas(){
-    const newSetas = new Setas(60,60)
-    newSetas._fallDown();
-    this.setas.push(newSetas);
-
+    const newSeta = new Seta(60,60);
+    this.setas.push(newSeta);
   }
 
 
@@ -59,12 +57,14 @@ class Game{
     this._clean();
     this._drawMario();
     this._drawSetas();
-    this._assignControls();
      window.requestAnimationFrame(() => this._update());
   }
 
   start() {
     this._assignControls();
+    this.intervalGame = setInterval(() => {
+      this._generateSetas();
+    },1000)
     this._update();
   }
 
