@@ -5,7 +5,20 @@
 
 /* Basic styles, change according to your style */
 
-#start-page,
+#start-page{
+  height: 600px;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  margin-top: 30px;
+  background-image: url("../images/castillo\ de\ peach.jpg") ;
+  background-size: 100% 100%;
+}
 #lose-page {
   height: 600px;
   width: 1000px;
@@ -29,6 +42,7 @@ canvas {
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 50px;
+  background-image: url("../images/castillo\ de\ bowser.jpg") ;
 }
 
 /* Auxiliar classes */
