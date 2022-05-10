@@ -49,6 +49,38 @@ class Game{
     });
   }
 
+  _generateCollision(){
+    this.setas.forEach((seta) => {
+      if (
+        (
+        
+          this.mario.x >= seta.x && this.mario.x <= seta.x + seta.width ||
+          this.mario.x + this.mario.width >= seta.x && this.mario.x + this.mario.width <= seta.x + seta.width ||
+           seta.x >= this.mario.x && seta.x <= this.mario.x + this.mario.width
+        ) 
+        &&
+        (
+        
+          this.mario.y >= seta.y && this.mario.y <= seta.y + seta.height ||
+          this.mario.y + this.mario.height >= seta.y && this.mario.y + this.mario.height <= seta.y + seta.height ||
+          seta.y >= this.mario.y && seta.y <= this.mario.y + this.mario.height 
+        )           
+      ) {
+        this.mario._increase();
+        this.points ++;
+        let index = this.setas.indexOf(seta)
+        this.setas.splice(index,1)
+      }
+    })
+
+  }
+
+ // _score() {
+ //   this.ctx.fillStyle = 'purple';
+   // this.ctx.font = "30px Arial";
+    //this.ctx.fillText (`Points ${this.points}, 900, 50`);
+  //}
+
   _clean() {
     this.ctx.clearRect(0, 0, 1000, 600);
   }
@@ -57,6 +89,8 @@ class Game{
     this._clean();
     this._drawMario();
     this._drawSetas();
+    this._generateCollision();
+    //this._score();
      window.requestAnimationFrame(() => this._update());
   }
 

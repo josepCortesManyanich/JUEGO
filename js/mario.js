@@ -29,7 +29,7 @@ class Mario {
     
    // }
 // como solo quiero que suba un nivel pongo condicionales para que cuando vaya a incrementarse mas se quede con el mismo tamaño
-    increase(){
+    _increase(){
         this.width = this.width + 20;
         this.height = this.height + 20;
         this.y = this.y - 20
@@ -41,11 +41,11 @@ class Mario {
         }
     }
 
-    jumpFunction(){
+    _jumpFunction(){
 
     }
 
-    decrease(){
+    _decrease(){
        
         
     }
