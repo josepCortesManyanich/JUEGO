@@ -1,10 +1,13 @@
 
 class Mario {
-    constructor(x,y,width,height){
+    constructor(x, y, width, height) {
         this.x = x;
         this.y = y;
+        this.initialY = y;
         this.width = width;
         this.height = height;
+        this.initialWidth = width;
+        this.initialHeight = height;
     }
  // cuando llega la tope de la derecha quiero que siga avanzando por la derecha.   
     moveRight(){
@@ -32,13 +35,12 @@ class Mario {
     _increase(){
         this.width = this.width + 20;
         this.height = this.height + 20;
-        this.y = this.y - 20
-
-        if (this.width >= this.width + 21){
-            return this.width
-        }else if (this.height >= this.height + 21){
-            return this.height
-        }
+        this.y = this.y - 20;
+        if (this.width >= this.initialWidth + 20){
+            this.width = this.initialWidth + 20;
+            this.height = this.initialHeight + 20;
+            this.y = this.initialY - 20;
+        } 
     }
 
     _jumpFunction(){

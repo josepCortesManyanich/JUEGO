@@ -1,22 +1,20 @@
 class Enemy {
     constructor(width,height){
-        this.x = x;
-        this.y = Math.floor(Math.random(600-399)+1);
+        this.x = 1100;
         this.width = width;
         this.height = height;
+        // this.y = Math.floor(Math.random() * (600 - 300 - this.width) + 300 - this.width);
+        this.y = 600 - this.height;
     }
 
     _enemyAppears(){
         this.fallInterval = setInterval (() => {
-            if(this.x >= 0){
+            if(this.x < -this.width){
                 clearInterval(this.fallInterval);
             } else {
-              this.x ++
+                this.x--;
             }
         },1500)
-        console.log(`Enemy position: ${this.x}, ${this.y}`);
     }
     
-
-
 }

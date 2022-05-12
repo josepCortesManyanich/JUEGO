@@ -6,7 +6,7 @@ class Game{
     this.intervalFall = undefined;
     this.setas = [];
     this.enemyes = [];
-    //this.points= 0;
+    this.points = 0;
 
   }
   
@@ -40,7 +40,7 @@ class Game{
 
 
 // funcion que me las genera, math random y set Interval
-  //_generateSetas(){
+  _generateSetas(){
     const newSeta = new Seta(60,60);
     this.setas.push(newSeta);
   }
@@ -80,7 +80,7 @@ class Game{
         )           
       ) {
         this.mario._increase();
-        this.points ++;
+        this.points++;
         let index = this.setas.indexOf(seta)
         this.setas.splice(index,1)
       }
@@ -88,11 +88,11 @@ class Game{
 
   }
 
- // _score() {
- //   this.ctx.fillStyle = 'purple';
-   // this.ctx.font = "30px Arial";
-    //this.ctx.fillText (`Points ${this.points}, 900, 50`);
-  //}
+ _score() {
+   this.ctx.fillStyle = 'purple';
+   this.ctx.font = "30px Arial";
+   this.ctx.fillText(`Points: ${this.points}`, 900, 50);
+  }
 
   _clean() {
     this.ctx.clearRect(0, 0, 1000, 600);
@@ -104,15 +104,15 @@ class Game{
     this._drawSetas();
     this._generateCollision();
     this._drawEnemyes();
-        //this._score();
+    this._score();
      window.requestAnimationFrame(() => this._update());
   }
 
   start() {
     this._assignControls();
- //   this.intervalGame = setInterval(() => {
-   //   this._generateSetas();
-    //},5000)
+   this.intervalGame = setInterval(() => {
+     this._generateSetas();
+    },5000)
     this.intervalGame = setInterval(() => {
       this._generateEnemy();
     },1000)
