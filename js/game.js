@@ -88,9 +88,31 @@ class Game{
 
   }
 
- // _generateCollision2() {
- //   this.enemyes.forEach
-  //}
+  _generateCollision2() {
+  this.enemyes.forEach((enemy) => {
+    if (
+      (
+      
+        this.mario.x >= enemy.x && this.mario.x <= enemy.x + enemy.width ||
+        this.mario.x + this.mario.width >= enemy.x && this.mario.x + this.mario.width <= enemy.x + enemy.width ||
+         enemy.x >= this.mario.x && enemy.x <= this.mario.x + this.mario.width
+      ) 
+      &&
+      (
+      
+        this.mario.y >= enemy.y && this.mario.y <= enemy.y + enemy.height ||
+        this.mario.y + this.mario.height >= enemy.y && this.mario.y + this.mario.height <= enemy.y + enemy.height ||
+        enemy.y >= this.mario.y && enemy.y <= this.mario.y + this.mario.height 
+      )
+    ){
+      this.mario._decrease();
+      this.points --;
+      let index = this.enemyes.indexOf(enemy)
+      this.enemyes.splice(index,1)
+    }           
+
+  })
+  }
 
   _score() {
   this.ctx.fillStyle = 'purple';
@@ -106,10 +128,11 @@ class Game{
     this._clean();
     this._drawMario();
     this._drawSetas();
-    this._generateCollision();
     this._drawEnemyes();
     this._score();
-     window.requestAnimationFrame(() => this._update());
+    this._generateCollision();
+    this._generateCollision2();
+    window.requestAnimationFrame(() => this._update());
   }
 
   start() {

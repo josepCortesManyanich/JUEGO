@@ -1,6 +1,6 @@
 
 class Mario {
-    constructor(x, y, width, height) {
+    constructor(x,y,width,height){
         this.x = x;
         this.y = y;
         this.initialY = y;
@@ -39,18 +39,20 @@ class Mario {
         if (this.width >= this.initialWidth + 20){
             this.width = this.initialWidth + 20;
             this.height = this.initialHeight + 20;
-            this.y = this.initialY - 20;
-        } 
+            this.y = this.initialY - 20;}
     }
 
-    _jumpFunction(){
+    //_jumpFunction(){
 
-    }
+    
 
     _decrease(){
-       
+     this.width = this.width - 20;
+     this.height = this.height - 20;
+     this.y = this.y + 20;
+     }
         
-    }
+    
 
 
 }
