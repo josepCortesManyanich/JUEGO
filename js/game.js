@@ -5,7 +5,8 @@ class Game{
     this.intervalGame = undefined;
     this.intervalFall = undefined;
     this.setas = [];
-    this.points = 0;
+    this.enemyes = [];
+    //this.points= 0;
 
   }
   
@@ -24,10 +25,22 @@ class Game{
        elem._fallDown(); 
     })
   }
+   _drawEnemyes(){
+     this.enemyes.forEach((elem) => {
+       this.ctx.fillStyle = 'orange'
+       this.ctx.fillRect(elem.x, elem.y, elem.width, elem.height);
+       elem._enemyAppears();
+     })
+   }
+
+   _generateEnemy(){
+     const newEnemy = new Enemy(100, 100)
+     this.enemyes.push(newEnemy);
+   }
 
 
 // funcion que me las genera, math random y set Interval
-  _generateSetas(){
+  //_generateSetas(){
     const newSeta = new Seta(60,60);
     this.setas.push(newSeta);
   }
@@ -90,14 +103,18 @@ class Game{
     this._drawMario();
     this._drawSetas();
     this._generateCollision();
-    //this._score();
+    this._drawEnemyes();
+        //this._score();
      window.requestAnimationFrame(() => this._update());
   }
 
   start() {
     this._assignControls();
+ //   this.intervalGame = setInterval(() => {
+   //   this._generateSetas();
+    //},5000)
     this.intervalGame = setInterval(() => {
-      this._generateSetas();
+      this._generateEnemy();
     },1000)
     this._update();
   }

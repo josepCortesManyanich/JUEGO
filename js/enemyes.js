@@ -1,5 +1,5 @@
-class Enemyes {
-    constructor(x,y,width,height){
+class Enemy {
+    constructor(width,height){
         this.x = x;
         this.y = Math.floor(Math.random(600-399)+1);
         this.width = width;
