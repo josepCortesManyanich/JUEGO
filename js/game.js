@@ -6,7 +6,7 @@ class Game{
     this.intervalFall = undefined;
     this.setas = [];
     this.enemyes = [];
-    this.points = 0;
+    this.points= 0;
 
   }
   
@@ -80,7 +80,7 @@ class Game{
         )           
       ) {
         this.mario._increase();
-        this.points++;
+        this.points ++;
         let index = this.setas.indexOf(seta)
         this.setas.splice(index,1)
       }
@@ -88,10 +88,14 @@ class Game{
 
   }
 
- _score() {
-   this.ctx.fillStyle = 'purple';
-   this.ctx.font = "30px Arial";
-   this.ctx.fillText(`Points: ${this.points}`, 900, 50);
+ // _generateCollision2() {
+ //   this.enemyes.forEach
+  //}
+
+  _score() {
+  this.ctx.fillStyle = 'purple';
+  this.ctx.font = "30px Arial";
+  this.ctx.fillText (`Points ${this.points}`, 750 , 100);
   }
 
   _clean() {
@@ -110,7 +114,7 @@ class Game{
 
   start() {
     this._assignControls();
-   this.intervalGame = setInterval(() => {
+    this.intervalGame = setInterval(() => {
      this._generateSetas();
     },5000)
     this.intervalGame = setInterval(() => {
