@@ -56,8 +56,12 @@ class Game{
         case 'ArrowRight':
           this.mario.moveRight();
           break;
+        case 'Space':
+          this.mario._jumpFunction();
+          break;
         default:
           break;
+            
       }
     });
   }
