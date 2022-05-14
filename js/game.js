@@ -39,7 +39,7 @@ class Game{
    }
 
 
-// funcion que me las genera, math random y set Interval
+
   _generateSetas(){
     const newSeta = new Seta(60,60);
     this.setas.push(newSeta);
@@ -57,7 +57,7 @@ class Game{
           this.mario.moveRight();
           break;
         case 'Space':
-          this.mario._jumpFunction();
+          this.mario.jumpFunction();
           break;
         default:
           break;
@@ -151,6 +151,12 @@ class Game{
   }
 
   gameOver(){
-
+    clearInterval(this.intervalFall);
+    clearInterval(this.intervalGame);
+    const losePage = document.getElementById('lose-page');
+    losePage.style = "display: flex";
+    const canvas = document.getElementById('canvas');
+    canvas.style = "display: none;"
+    
   }
 }
