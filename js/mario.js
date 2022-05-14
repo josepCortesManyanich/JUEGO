@@ -10,6 +10,7 @@ class Mario {
         this.initialHeight = height;
         this.jumpInterval = undefined;
         this.jumping = false;
+        
     }
  // cuando llega la tope de la derecha quiero que siga avanzando por la derecha.   
     moveRight(){
@@ -27,16 +28,17 @@ class Mario {
     }
 
    jumpFunction(){
-       this.jumping = true;
-       this.jumpInterval = setInterval(() => {
-           if (this.y === 500 && this.jumping) {
-               this.y -= 150;
-           } else if (this.y <= 450) {
-               this.y += 150;
-               this.jumping = false;
-               clearInterval(this.jumpInterval);
-           }
-       }, 100)   
+    this.jumping = true;
+    this.jumpInterval = setInterval(() => {
+        if (this.y === 500 && this.jumping) {
+            this.y -= 250;
+        } else if (this.y <= 450) {
+            this.y += 250;
+            this.jumping = false;
+            clearInterval(this.jumpInterval);
+        }
+    }, 100)
+    
    }
   
 // como solo quiero que suba un nivel pongo condicionales para que cuando vaya a incrementarse mas se quede con el mismo tamaño

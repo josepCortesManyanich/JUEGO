@@ -6,7 +6,7 @@ class Game{
     this.intervalFall = undefined;
     this.setas = [];
     this.enemyes = [];
-    this.points= 0;
+    this.points= 1;
 
   }
   
@@ -84,10 +84,11 @@ class Game{
         )           
       ) {
         this.mario._increase();
-        this.points ++;
+        this.points = this.points + 1
         let index = this.setas.indexOf(seta)
         this.setas.splice(index,1)
       }
+      
     })
 
   }
@@ -110,11 +111,14 @@ class Game{
       )
     ){
       this.mario._decrease();
-      this.points --;
-      let index = this.enemyes.indexOf(enemy)
-      this.enemyes.splice(index,1)
-    }           
-
+      this.points = this.points - 1
+      
+    }  
+    if(this.points = 0){
+      this.gameOver();
+    }
+    let index = this.enemyes.indexOf(enemy)
+    this.enemyes.splice(index,1)
   })
   }
 
@@ -143,10 +147,10 @@ class Game{
     this._assignControls();
     this.intervalGame = setInterval(() => {
      this._generateSetas();
-    },5000)
+    },2000)
     this.intervalGame = setInterval(() => {
       this._generateEnemy();
-    },1000)
+    },5000)
     this._update();
   }
 
