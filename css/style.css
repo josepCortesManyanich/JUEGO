@@ -18,7 +18,8 @@
   margin-top: 30px;
   background-image: url("../images/castillo\ de\ peach.jpg") ;
   background-size: 100% 100%;
-}
+  }
+
 #lose-page {
   height: 600px;
   width: 1000px;
@@ -30,10 +31,31 @@
   margin: 0 auto;
   border: 1px solid black;
   margin-top: 30px;
+  background-image: url("../images/mario-triste_1.png");
+  background-size: 100% 100%;
+
 }
 
 #lose-page {
-  display: none;
+  display : none;
+}
+
+
+
+#win-page{
+  height: 600px;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  margin-top: 30px;
+  background-image: url('../images/ironhack\ logo.png');
+  background-size: 100% 100%;
+  
 }
 
 canvas {
@@ -53,4 +75,17 @@ canvas {
 
 .shown {
   display: flex;
+}
+
+.title1 {
+  font-size: 100px;
+  color: purple;
+  letter-spacing: 4px;
+}
+
+.description {
+  font-size: 80px;
+  color:black;
+  letter-spacing: 2px;
+  
 }
