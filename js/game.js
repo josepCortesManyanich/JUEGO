@@ -112,13 +112,13 @@ class Game{
     ){
       this.mario._decrease();
       this.points = this.points - 1
-      
+      let index = this.enemyes.indexOf(enemy)
+      this.enemyes.splice(index,1)
     }  
     if(this.points = 0){
       this.gameOver();
     }
-    let index = this.enemyes.indexOf(enemy)
-    this.enemyes.splice(index,1)
+    
   })
   }
 
@@ -150,7 +150,7 @@ class Game{
     },2000)
     this.intervalGame = setInterval(() => {
       this._generateEnemy();
-    },5000)
+    },2000)
     this._update();
   }
 

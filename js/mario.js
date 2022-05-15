@@ -1,6 +1,6 @@
 
 class Mario {
-    constructor(x,y,width,height){
+    constructor(x,y,width,height,floorBackgroundY){
         this.x = x;
         this.y = y;
         this.initialY = y;
@@ -10,6 +10,12 @@ class Mario {
         this.initialHeight = height;
         this.jumpInterval = undefined;
         this.jumping = false;
+        this.drag = 0.99;
+        this.gravity = 0.3;
+        this.speed = -11;
+        this.onTheGround = true;
+        this.jumpInterval = undefined;
+        this.floorBackgroundY = floorBackgroundY;
         
     }
  // cuando llega la tope de la derecha quiero que siga avanzando por la derecha.   
@@ -28,19 +34,31 @@ class Mario {
     }
 
    jumpFunction(){
-    this.jumping = true;
-    this.jumpInterval = setInterval(() => {
-        if (this.y === 500 && this.jumping) {
-            this.y -= 250;
-        } else if (this.y <= 450) {
-            this.y += 250;
-            this.jumping = false;
-            clearInterval(this.jumpInterval);
-        }
-    }, 100)
-    
+    if (this.onTheGround) {           
+        this.onTheGround = false;    
+        this.jumpInterval = setInterval(() => {
+          this.speed += this.gravity; 
+          this.speed *= this.drag;    
+          this.y += this.speed;     
+          this._checkIfOnFloor();     
+        }, 40);
+      }
    }
-  
+   
+    _checkIfOnFloor() {
+    if (this.y > this.floorBackgroundY - this.height) { 
+      clearInterval(this.jumpInterval);
+      this.jumpInterval = undefined;
+      this.y = this.floorBackgroundY - this.height;     
+      this.drag = 0.99;
+      this.gravity = 0.3;
+      this.speed = -11;
+      this.onTheGround = true;
+    }
+  }
+
+   
+   
 // como solo quiero que suba un nivel pongo condicionales para que cuando vaya a incrementarse mas se quede con el mismo tamaño
     _increase(){
         this.width = this.width + 20;
