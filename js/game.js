@@ -32,7 +32,7 @@ class Game{
        elem._enemyAppears();
      })
    }
-
+//Generate enemys and droplets
    _generateEnemy(){
      const newEnemy = new Enemy(100, 100)
      this.enemyes.push(newEnemy);
@@ -45,9 +45,10 @@ class Game{
     this.setas.push(newSeta);
   }
 
+// CONTROL ASSIGNS
 
   _assignControls() {
-    // Controles del teclado
+    
     document.addEventListener('keydown', (event) => {
       switch (event.code) {
         case 'ArrowLeft':
@@ -65,6 +66,8 @@ class Game{
       }
     });
   }
+
+  // CHECK THE COLLISIONS
 
   _generateCollision(){
     this.setas.forEach((seta) => {
@@ -88,6 +91,11 @@ class Game{
         let index = this.setas.indexOf(seta)
         this.setas.splice(index,1)
       }
+
+     if (this.points <= 2){
+       this.winMode();
+     }
+
       
     })
 
@@ -116,7 +124,7 @@ class Game{
       this.enemyes.splice(index,1)
     }  
     if(this.points = 0){
-      this.gameOver();
+     this.gameOver();
     }
     
   })
@@ -154,13 +162,26 @@ class Game{
     this._update();
   }
 
+  // GAME STATES
+
   gameOver(){
+    this._clean()
     clearInterval(this.intervalFall);
     clearInterval(this.intervalGame);
     const losePage = document.getElementById('lose-page');
     losePage.style = "display: flex";
     const canvas = document.getElementById('canvas');
-    canvas.style = "display: none;"
+    canvas.style = "display: none";
     
+  }
+  
+  winMode(){
+    this._clean();
+    clearInterval(this.intervalFall);
+    clearInterval(this.intervalGame);
+    const winPage = document.getElementById('win-page');
+    winPage.style = "display:flex";
+    const canvas = document.getElementById('canvas');
+    canvas.style = "display: none";
   }
 }
