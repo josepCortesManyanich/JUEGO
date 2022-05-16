@@ -3,8 +3,8 @@ class Enemy {
         this.x = 1100;
         this.width = width;
         this.height = height;
-        // this.y = Math.floor(Math.random() * (600 - 300 - this.width) + 300 - this.width);
         this.y = 600 - this.height;
+        this.imageEnemy = undefined
     }
 
     _enemyAppears(){
@@ -14,7 +14,18 @@ class Enemy {
             } else {
                 this.x--;
             }
-        },1500)
+        },3000)
     }
     
 }
+
+//this.jumping = true;
+//this.jumpInterval = setInterval(() => {
+  //  if (this.y === 500 && this.jumping)  {
+    //    this.y -= 250;
+    //} else if (this.y <= 450) {
+      //  this.y += 250;
+        //this.jumping = false;
+        //clearInterval(this.jumpInterval);
+    //}
+//}, 100)
