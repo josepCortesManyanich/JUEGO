@@ -6,7 +6,7 @@ class Game{
     this.intervalFall = undefined;
     this.setas = [];
     this.enemyes = [];
-    this.points= 1;
+    this.points = 1;
 
   }
   
@@ -16,7 +16,6 @@ class Game{
     this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
     
   }
-  
   
    _drawSetas(){
     this.setas.forEach((elem) => {
@@ -37,8 +36,6 @@ class Game{
      const newEnemy = new Enemy(100, 100)
      this.enemyes.push(newEnemy);
    }
-
-
 
   _generateSetas(){
     const newSeta = new Seta(60,60);
@@ -69,7 +66,7 @@ class Game{
 
   // CHECK THE COLLISIONS
 
-  _generateCollision(){
+  _checkMushroomCollision(){
     this.setas.forEach((seta) => {
       if (
         (
@@ -86,22 +83,24 @@ class Game{
           seta.y >= this.mario.y && seta.y <= this.mario.y + this.mario.height 
         )           
       ) {
+        console.log('colliding with seta')
         this.mario._increase();
         this.points = this.points + 1
         let index = this.setas.indexOf(seta)
         this.setas.splice(index,1)
       }
 
-     if (this.points <= 2){
+     if (this.points === 3){
        this.winMode();
      }
-
-      
+    if (this.points < 0){
+       this.gameOver();
+     }
     })
 
   }
 
-  _generateCollision2() {
+  _checkEnemyCollision() {
   this.enemyes.forEach((enemy) => {
     if (
       (
@@ -112,21 +111,17 @@ class Game{
       ) 
       &&
       (
-      
         this.mario.y >= enemy.y && this.mario.y <= enemy.y + enemy.height ||
         this.mario.y + this.mario.height >= enemy.y && this.mario.y + this.mario.height <= enemy.y + enemy.height ||
         enemy.y >= this.mario.y && enemy.y <= this.mario.y + this.mario.height 
       )
-    ){
+    ) {
+      console.log('colliding with enemy')
       this.mario._decrease();
       this.points = this.points - 1
       let index = this.enemyes.indexOf(enemy)
       this.enemyes.splice(index,1)
     }  
-    if(this.points = 0){
-     this.gameOver();
-    }
-    
   })
   }
 
@@ -141,13 +136,14 @@ class Game{
   }
 
   _update() {
+    console.log(this.mario.y)
     this._clean();
     this._drawMario();
     this._drawSetas();
     this._drawEnemyes();
     this._score();
-    this._generateCollision();
-    this._generateCollision2();
+    this._checkEnemyCollision();
+    this._checkMushroomCollision();
     window.requestAnimationFrame(() => this._update());
   }
 

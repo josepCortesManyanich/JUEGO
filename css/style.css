@@ -5,7 +5,7 @@
 
 /* Basic styles, change according to your style */
 
-#start-page{
+#start-page {
   height: 600px;
   width: 1000px;
   display: flex;
@@ -16,9 +16,9 @@
   margin: 0 auto;
   border: 1px solid black;
   margin-top: 30px;
-  background-image: url("../images/castillo\ de\ peach.jpg") ;
+  background-image: url("../images/castillo\ de\ peach.jpg");
   background-size: 100% 100%;
-  }
+}
 
 #lose-page {
   height: 600px;
@@ -37,12 +37,12 @@
 }
 
 #lose-page {
-  display : none;
+  display: none;
 }
 
 
 
-#win-page{
+#win-page {
   height: 600px;
   width: 1000px;
   display: flex;
@@ -55,7 +55,11 @@
   margin-top: 30px;
   background-image: url('../images/ironhack\ logo.png');
   background-size: 100% 100%;
-  
+
+}
+
+#win-page {
+  display: none;
 }
 
 canvas {
@@ -64,7 +68,7 @@ canvas {
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 50px;
-  background-image: url("../images/castillo\ de\ bowser.jpg") ;
+  background-image: url("../images/castillo\ de\ bowser.jpg");
 }
 
 /* Auxiliar classes */
@@ -85,7 +89,7 @@ canvas {
 
 .description {
   font-size: 80px;
-  color:black;
+  color: black;
   letter-spacing: 2px;
-  
+
 }
