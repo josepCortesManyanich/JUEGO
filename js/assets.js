@@ -46,20 +46,39 @@ mario7.src = '../images/marioderecha5.png';
 const mario8 = new Image();
 mario8.src = '../images/marioderecha5.png';
 // 63 86
-const marioArrayRight = [mario1,mario2,mario3,mario4,mario5,mario6,mario7,mario8]
+const marioArrayRight = [mario1, mario2, mario3, mario4, mario5, mario6, mario7, mario8]
 
-
+///////
 const marioLeft1 = new Image();
+marioLeft1.src = '../images/marioderecha1.png'
 const marioLeft2 = new Image();
+marioLeft2.src = '../images/marioLeft1.png';
 const marioLeft3 = new Image();
+marioLeft3.src = '../images/marioLeft2.png';
 const marioLeft4 = new Image();
+marioLeft4.src = '../images/marioLeft3.png';
 const marioLeft5 = new Image();
+marioLeft5.src = '../images/marioLeft4.png';
 const marioLeft6 = new Image();
+marioLeft6.src = '../images/marioLeft4.png';
 const marioLeft7 = new Image();
+marioLeft7.src = '../images/marioLeft4.png';
 const marioLeft8 = new Image();
-const marioLeft9 = new Image();
-
-const marioArrayLeft = [marioLeft1,marioLeft2,marioLeft3,marioLeft4,marioLeft5,marioLeft6,marioLeft7,marioLeft8,marioLeft9]
+marioLeft8.src = '../images/marioLeft4.png';
 
 
+const marioArrayLeft = [marioLeft1, marioLeft2, marioLeft3, marioLeft4, marioLeft5, marioLeft6, marioLeft7, marioLeft8,]
 
+
+//////
+
+const marioJump = new Image();
+marioJump.src = '../images/marioJump.png'
+const marioJump1 = new Image();
+marioJump1.src = '../images/marioJump.png'
+const marioJump2 = new Image();
+marioJump2.src = '../images/marioJump.png'
+const marioJump3 = new Image();
+marioJump3.src = '../images/marioJump.png'
+
+const marioArrayJump = [marioJump, marioJump1, marioJump2, marioJump3]
