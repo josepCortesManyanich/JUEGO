@@ -9,8 +9,8 @@
   height: 600px;
   width: 1000px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
@@ -88,8 +88,13 @@ canvas {
 }
 
 .description {
-  font-size: 50px;
+  font-size: 25px;
   color: black;
   letter-spacing: 2px;
+  text-align: left;
 
+}
+#main-page {
+  width: 20%;
+  height: 70%;
 }
