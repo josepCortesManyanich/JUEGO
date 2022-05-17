@@ -4,8 +4,8 @@ class Seta{
         this.y = Math.floor(Math.random() * (-100 +61) -60);
         this.width = width;
         this.height = height;
-        this.fallInterval = undefined
-        this.image = undefined
+        this.fallInterval = undefined;
+        this.image = mushroom;
     
 }
     _fallDown(){
@@ -19,9 +19,9 @@ class Seta{
         console.log(`Setas position: ${this.x}, ${this.y}`);
     }
     
-    _assignImage(){
-        this.image = mushroomArray[Math.random()* mushroomArray.length]
-    }
+    // _assignImage(){
+    //     this.image = mushroomArray[Math.random()* mushroomArray.length]
+    // }
 
 
 

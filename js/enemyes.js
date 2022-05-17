@@ -4,7 +4,7 @@ class Enemy {
         this.width = width;
         this.height = height;
         this.y = 600 - this.height;
-        this.image = undefined
+        this.image = bowserArray[Math.floor(Math.random() * bowserArray.length)];
     }
 
     _enemyAppears(){

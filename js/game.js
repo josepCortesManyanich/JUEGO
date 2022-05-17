@@ -15,20 +15,21 @@ class Game{
   _drawMario() {
     //this.ctx.fillStyle = 'red';
     //this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
-    this.ctx.drawImage(this.mario.image,150, 500, 100, 100, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+    this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
   }
   
   
    _drawSetas(){
-    this.setas.forEach((elem) => {
-       this.ctx.drawImage(elem.image, elem.x, elem.y, elem.width, elem.height);
+     this.setas.forEach((elem) => {
+       console.log(elem);
+       this.ctx.drawImage(elem.image, 0,0,200,200,elem.x, elem.y, elem.width, elem.height);
        elem._fallDown(); 
     })
   }
    _drawEnemyes(){
      this.enemyes.forEach((elem) => {
        //this.ctx.fillStyle = 'orange'
-       this.ctx.drawImage(elem.image, elem.y, elem.width, elem.height);
+       this.ctx.drawImage(elem.image, 0,0,72,74,elem.x,elem.y, elem.width, elem.height);
        elem._enemyAppears();
      })
    }
@@ -37,8 +38,6 @@ class Game{
      const newEnemy = new Enemy(100, 100)
      this.enemyes.push(newEnemy);
    }
-
-
 
   _generateSetas(){
     const newSeta = new Seta(60,60);
