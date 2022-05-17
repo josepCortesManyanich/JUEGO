@@ -6,6 +6,7 @@ class Game{
     this.intervalFall = undefined;
     this.setas = [];
     this.enemyes = [];
+    this.javascripts = [];
     this.goldenmushrooms = [];
     this.points= 1;
 
@@ -21,7 +22,6 @@ class Game{
   
    _drawSetas(){
      this.setas.forEach((elem) => {
-       console.log(elem);
        this.ctx.drawImage(elem.image, 0,0,200,200,elem.x, elem.y, elem.width, elem.height);
        elem._fallDown(); 
     })
@@ -33,6 +33,15 @@ class Game{
        elem._enemyAppears();
      })
    }
+   
+   _drawJavaScript(){
+    this.javascripts.forEach((elem) => {
+      console.log(elem);
+      this.ctx.drawImage(elem.image, 0,0,200,200,elem.x, elem.y, elem.width, elem.height);
+      elem._fallDown(); 
+   })
+    //this.ctx.drawImage(this.javascript.image,0, 0, 200, 200, this.javascript.x, this.javascript.y, this.javascript.width, this.javascript.height)
+   }
 //Generate enemys and droplets
    _generateEnemy(){
      const newEnemy = new Enemy(100, 100)
@@ -42,6 +51,11 @@ class Game{
   _generateSetas(){
     const newSeta = new Seta(60,60);
     this.setas.push(newSeta);
+  }
+
+  _generateJavascripts(){
+    const newJavaScript = new JavaScript(60,60);
+    this.javascripts.push(newJavaScript);
   }
 
 // CONTROL ASSIGNS
@@ -72,10 +86,9 @@ class Game{
     this.setas.forEach((seta) => {
       if (
         (
-        
-          this.mario.x >= seta.x && this.mario.x <= seta.x + seta.width ||
-          this.mario.x + this.mario.width >= seta.x && this.mario.x + this.mario.width <= seta.x + seta.width ||
-           seta.x >= this.mario.x && seta.x <= this.mario.x + this.mario.width
+        this.mario.x >= seta.x && this.mario.x <= seta.x + seta.width ||
+        this.mario.x + this.mario.width >= seta.x && this.mario.x + this.mario.width <= seta.x + seta.width ||
+        seta.x >= this.mario.x && seta.x <= this.mario.x + this.mario.width
         ) 
         &&
         (
@@ -126,8 +139,31 @@ class Game{
   }
 
   _generateCollision3(){
-    
+    this.javascripts.forEach((javascript) => {
+      if (
+        (
+        
+          this.mario.x >= javascript.x && this.mario.x <= javascript.x + javascript.width ||
+          this.mario.x + this.mario.width >= javascript.x && this.mario.x + this.mario.width <= javascript.x + javascript.width ||
+           javascript.x >= this.mario.x && javascript.x <= this.mario.x + this.mario.width
+        ) 
+        &&
+        (
+        
+          this.mario.y >= javascript.y && this.mario.y <= javascript.y + javascript.height ||
+          this.mario.y + this.mario.height >= javascript.y && this.mario.y + this.mario.height <= javascript.y + javascript.height ||
+          javascript.y >= this.mario.y && javascript.y <= this.mario.y + this.mario.height 
+        )
+      ){
+        this.winMode();
+      }  
+
+    })
   }
+    
+ 
+
+  
 
   _score() {
   this.ctx.fillStyle = 'purple';
@@ -144,9 +180,11 @@ class Game{
     this._drawMario();
     this._drawSetas();
     this._drawEnemyes();
+    this._drawJavaScript();
     this._score();
     this._generateCollision();
     this._generateCollision2();
+    this._generateCollision3();
     window.requestAnimationFrame(() => this._update());
   }
 
@@ -157,7 +195,10 @@ class Game{
     },2000)
     this.intervalGame = setInterval(() => {
       this._generateEnemy();
-    },2000)
+    },4000)
+    this.intervalGame = setInterval(() => {
+      this._generateJavascripts();
+    },10000)
     this._update();
   }
 

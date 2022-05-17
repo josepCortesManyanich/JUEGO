@@ -82,3 +82,7 @@ const marioJump3 = new Image();
 marioJump3.src = '../images/marioJump.png';
 
 const marioArrayJump = [marioJump, marioJump1, marioJump2, marioJump3]
+
+////
+const javaScript1 = new Image();
+javaScript1.src = '../images/JS.png';

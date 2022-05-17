@@ -1,11 +1,11 @@
-
-constructor(width, height) {
+class JavaScript{
+  constructor(width, height) {
     this.x = Math.floor(Math.random() * (950 - 4) + 5);
     this.y = Math.floor(Math.random() * (-100 +61) -60);
     this.width = width;
     this.height = height;
-    this.fallInterval = undefined
-    this.image = undefined
+    this.fallInterval = undefined;
+    this.image = javaScript1;
 
 }
 _fallDown(){
@@ -15,6 +15,8 @@ _fallDown(){
         } else {
           this.y ++
         }
-    },4000)
-    console.log(`Setas position: ${this.x}, ${this.y}`);
+    },10000)
+    
+}
+
 }

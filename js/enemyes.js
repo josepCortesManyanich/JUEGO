@@ -14,7 +14,7 @@ class Enemy {
             } else {
                 this.x--;
             }
-        },3000)
+        },6000)
     }
     
 }

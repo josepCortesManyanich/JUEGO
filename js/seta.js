@@ -5,7 +5,7 @@ class Seta{
         this.width = width;
         this.height = height;
         this.fallInterval = undefined;
-        this.image = mushroom;
+        this.image = mushroomArray[Math.floor(Math.random()* mushroomArray.length)]
     
 }
     _fallDown(){
