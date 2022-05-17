@@ -14,7 +14,7 @@ class Game{
   _drawMario() {
     //this.ctx.fillStyle = 'red';
     //this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
-    this.ctx.drawImage(this.mario.image,150,500,100,100, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+    this.ctx.drawImage(this.mario.image,150, 500, 100, 100, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
   }
   
   
@@ -26,8 +26,8 @@ class Game{
   }
    _drawEnemyes(){
      this.enemyes.forEach((elem) => {
-       this.ctx.fillStyle = 'orange'
-       this.ctx.fillRect(elem.x, elem.y, elem.width, elem.height);
+       //this.ctx.fillStyle = 'orange'
+       this.ctx.drawImage(elem.image, elem.y, elem.width, elem.height);
        elem._enemyAppears();
      })
    }

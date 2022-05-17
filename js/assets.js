@@ -1,7 +1,7 @@
 // Setas images
 
 const mushroom = new Image();
-mushroom.src = '../images/seta mario bross(1).png';
+mushroom.src = '../images/setamario.png';
 const mushroom1 = new Image();
 mushroom1.src = '../images/seta-mario-2.png';
 const mushroom2 = new Image();
