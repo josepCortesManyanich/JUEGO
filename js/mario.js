@@ -8,6 +8,10 @@ class Mario {
         this.height = height;
         this.initialWidth = width;
         this.initialHeight = height;
+        this.image = marioArrayRight[0];
+        this.image1 = marioArrayLeft [0];
+        this.image2= marioArrayJump[0];
+        this.stepCounter = 1;
         this.jumpInterval = undefined;
         this.jumping = false;
         this.drag = 0.99;
@@ -17,6 +21,7 @@ class Mario {
         this.jumpInterval = undefined;
         this.floorBackgroundY = floorBackgroundY;
         
+        
     }
 // PLAYER MOVEMENTS
     moveRight(){
@@ -24,6 +29,11 @@ class Mario {
         if (this.x >= 1000 - this.width){
             this.x = 1000 - this.width;
         }
+    this.image = marioArrayRight[this.stepCounter];
+    this.stepCounter++;
+    if (this.stepCounter == marioArrayRight.length) {
+      this.image = marioArrayRight[0];
+      this.stepCounter = 1;
     }
 
     moveLeft() {
@@ -31,6 +41,11 @@ class Mario {
         if (this.x <= 0 ) {
             this.x = 0 ;
         }
+    this.image1 = marioArrayLeft[this.stepCounter];
+    this.stepCounter++;
+    if (this.stepCounter == marioArrayLeft.length) {
+      this.image1 = marioArrayLeft[0];
+      this.stepCounter = 1;
     }
 
    jumpFunction(){

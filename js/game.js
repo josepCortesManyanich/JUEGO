@@ -6,6 +6,7 @@ class Game{
     this.intervalFall = undefined;
     this.setas = [];
     this.enemyes = [];
+    this.goldenmushrooms = [];
     this.points= 1;
 
   }
@@ -91,11 +92,7 @@ class Game{
         this.setas.splice(index,1)
       }
 
-     if (this.points <= 2){
-       this.winMode();
-     }
-
-      
+          
     })
 
   }
@@ -127,6 +124,10 @@ class Game{
     }
     
   })
+  }
+
+  _generateCollision3(){
+    
   }
 
   _score() {

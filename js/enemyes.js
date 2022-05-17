@@ -4,7 +4,7 @@ class Enemy {
         this.width = width;
         this.height = height;
         this.y = 600 - this.height;
-        this.imageEnemy = undefined
+        this.image = undefined
     }
 
     _enemyAppears(){
