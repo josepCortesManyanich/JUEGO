@@ -59,6 +59,12 @@ class Mario {
         this._checkIfOnFloor();
       }, 40);
     }
+    this.image2 = marioArrayJump[this.stepCounter];
+    this.stepCounter++;
+    if (this.stepCounter == marioArrayJump.length) {
+      this.image2 = marioArrayJump[0];
+      this.stepCounter = 1;
+    }
   }
 
   _checkIfOnFloor() {

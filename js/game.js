@@ -21,13 +21,14 @@ class Game{
     //Intento de funcion de drawMario
     //this.ctx.drawImage(this.mario.initialImage,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
     //if(this.mario.moveRight()){
-    //  this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+     //this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+    // console.log('hola');
     //}
-  //  else if (this.mario.moveLeft()){
-     // this.ctx.drawImage(this.mario.image1,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
-   // }
+   //else if (this.mario.moveLeft()){
+    // this.ctx.drawImage(this.mario.image1,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+    //}
    // else if (this.mario.jumpFunction()){
-    //  this.ctx.drawImage(this.mario.image2,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+     // this.ctx.drawImage(this.mario.image2,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
    // }
   }
   
@@ -144,7 +145,7 @@ class Game{
       let index = this.enemyes.indexOf(enemy)
       this.enemyes.splice(index,1)
     }  
-    if(this.points = 0){
+    if(this.points <= 0){
      this.gameOver();
     }
     
@@ -191,9 +192,9 @@ class Game{
   _update() {
     this._clean();
     this._drawMario();
-    //this._drawSetas();
-    //this._drawEnemyes();
-    //this._drawJavaScript();
+    this._drawSetas();
+    this._drawEnemyes();
+    this._drawJavaScript();
     this._score();
     this._generateCollision();
     this._generateCollision2();
@@ -205,13 +206,13 @@ class Game{
     this._assignControls();
     this.intervalGame = setInterval(() => {
      this._generateSetas();
-    },2000)
+    },1000)
     this.intervalGame = setInterval(() => {
       this._generateEnemy();
-    },4000)
+    },2000)
     this.intervalGame = setInterval(() => {
       this._generateJavascripts();
-    },10000)
+    },6000)
     this._update();
   }
 

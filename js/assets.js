@@ -10,14 +10,14 @@ mushroom2.src = '../images/seta-mario-grande.png';
 const mushroomArray = [mushroom, mushroom1, mushroom2];
 
 // Enemy sprite
-const bowser1 = new Image();
-bowser1.src = '../images/bowser1.png';
-const bowser2 = new Image();
-bowser2.src = '../images/bowser2.png';
-const bowser3 = new Image();
-bowser3.src = '../images/bowser3.png';
-const bowser4 = new Image();
-bowser4.src = '../images/bowser4.png';
+//const bowser1 = new Image();
+//bowser1.src = '../images/bowser1.png';
+//const bowser2 = new Image();
+//bowser2.src = '../images/bowser2.png';
+//const bowser3 = new Image();
+//bowser3.src = '../images/bowser3.png';
+//const bowser4 = new Image();
+//bowser4.src = '../images/bowser4.png';
 const bowser5 = new Image();
 bowser5.src = '../images/bowser5.png';
 const bowser6 = new Image();
@@ -25,12 +25,13 @@ bowser6.src = '../images/bowser6.png';
 const bowser7 = new Image();
 bowser7.src = '../images/bowser7.png';
 // 72 74
-const bowserArray = [bowser1, bowser2, bowser3, bowser4, bowser5, bowser6, bowser7];
+const bowserArray = [ bowser5, bowser6, bowser7];
 
 // Mario Sprite
 
 const mario1 = new Image();
 mario1.src = '../images/marioderecha1.png';
+//Right Sprite
 const mario2 = new Image();
 mario2.src = '../images/marioderecha2.png';
 const mario3 = new Image();
