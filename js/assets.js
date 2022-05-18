@@ -46,7 +46,7 @@ mario7.src = '../images/marioderecha5.png';
 const mario8 = new Image();
 mario8.src = '../images/marioderecha5.png';
 // 63 86
-const marioArrayRight = [mario1, mario2, mario3, mario4, mario5, mario6, mario7, mario8];
+const marioArrayRight = [mario2, mario3, mario4, mario5, mario6, mario7, mario8];
 
 ///////
 const marioLeft1 = new Image();

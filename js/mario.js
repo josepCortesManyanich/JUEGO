@@ -8,6 +8,7 @@ class Mario {
         this.height = height;
         this.initialWidth = width;
         this.initialHeight = height;
+        this.initialImage = mario1;
         this.image = marioArrayRight[0];
         this.image1 = marioArrayLeft [0];
         this.image2 = marioArrayJump[0];

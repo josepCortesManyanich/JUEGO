@@ -17,7 +17,20 @@ class Game{
     //this.ctx.fillStyle = 'red';
     //this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
     this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+ 
+    //Intento de funcion de drawMario
+    //this.ctx.drawImage(this.mario.initialImage,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+    //if(this.mario.moveRight()){
+    //  this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+    //}
+  //  else if (this.mario.moveLeft()){
+     // this.ctx.drawImage(this.mario.image1,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+   // }
+   // else if (this.mario.jumpFunction()){
+    //  this.ctx.drawImage(this.mario.image2,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
+   // }
   }
+  
   
   
    _drawSetas(){
@@ -178,9 +191,9 @@ class Game{
   _update() {
     this._clean();
     this._drawMario();
-    this._drawSetas();
-    this._drawEnemyes();
-    this._drawJavaScript();
+    //this._drawSetas();
+    //this._drawEnemyes();
+    //this._drawJavaScript();
     this._score();
     this._generateCollision();
     this._generateCollision2();
