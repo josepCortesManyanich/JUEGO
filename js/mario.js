@@ -10,8 +10,6 @@ class Mario {
         this.initialHeight = height;
         this.initialImage = mario1;
         this.image = marioArrayRight[0];
-        this.image1 = marioArrayLeft [0];
-        this.image2 = marioArrayJump[0];
         this.stepCounter = 1;
         this.jumpInterval = undefined;
         this.jumping = false;
@@ -41,7 +39,7 @@ class Mario {
     if (this.x <= 0) {
       this.x = 0;
     }
-    this.image1 = marioArrayLeft[this.stepCounter];
+    this.image = marioArrayLeft[this.stepCounter];
     this.stepCounter++;
     if (this.stepCounter == marioArrayLeft.length) {
       this.image1 = marioArrayLeft[0];
@@ -59,10 +57,10 @@ class Mario {
         this._checkIfOnFloor();
       }, 40);
     }
-    this.image2 = marioArrayJump[this.stepCounter];
+    this.image = marioArrayJump[this.stepCounter];
     this.stepCounter++;
     if (this.stepCounter == marioArrayJump.length) {
-      this.image2 = marioArrayJump[0];
+      this.image = marioArrayJump[0];
       this.stepCounter = 1;
     }
   }
