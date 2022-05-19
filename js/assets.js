@@ -20,7 +20,6 @@ const bowserArray = [ bowser5, bowser6, bowser7];
 
 // Mario Sprite
 
-
 //Right Sprite
 const mario2 = new Image();
 mario2.src = '../images/marioderecha2-removebg-preview.png';
@@ -57,22 +56,12 @@ marioLeft7.src = '../images/marioL4.png';
 const marioLeft8 = new Image();
 marioLeft8.src = '../images/marioL4.png';
 
-
 const marioArrayLeft = [marioLeft1, marioLeft2, marioLeft3, marioLeft4, marioLeft5, marioLeft6, marioLeft7, marioLeft8];
-
 
 //////
 
 const marioJump = new Image();
 marioJump.src = '../images/marioJ.png';
-// const marioJump1 = new Image();
-// marioJump1.src = '../images/marioJ.png';
-// const marioJump2 = new Image();
-// marioJump2.src = '../images/marioJ.png';
-// const marioJump3 = new Image();
-// marioJump3.src = '../images/marioJ.png';
-
-// const marioArrayJump = [marioJump, marioJump1, marioJump2, marioJump3]
 
 ////
 const javaScript1 = new Image();

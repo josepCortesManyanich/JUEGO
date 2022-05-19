@@ -12,7 +12,6 @@ class Game{
 
   }
   
-
   _drawMario() {
     //this.ctx.fillStyle = 'red';
     //this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
