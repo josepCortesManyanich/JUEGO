@@ -19,13 +19,3 @@ class Enemy {
     
 }
 
-//this.jumping = true;
-//this.jumpInterval = setInterval(() => {
-  //  if (this.y === 500 && this.jumping)  {
-    //    this.y -= 250;
-    //} else if (this.y <= 450) {
-      //  this.y += 250;
-        //this.jumping = false;
-        //clearInterval(this.jumpInterval);
-    //}
-//}, 100)

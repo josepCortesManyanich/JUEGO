@@ -18,23 +18,9 @@ class Game{
     //this.ctx.fillRect(this.mario.x, this.mario.y, this.mario.width, this.mario.height);
     this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
  
-    //Intento de funcion de drawMario
-    //this.ctx.drawImage(this.mario.initialImage,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
-    //if(this.mario.moveRight()){
-     //this.ctx.drawImage(this.mario.image,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
-    // console.log('hola');
-    //}
-   //else if (this.mario.moveLeft()){
-    // this.ctx.drawImage(this.mario.image1,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
-    //}
-   // else if (this.mario.jumpFunction()){
-     // this.ctx.drawImage(this.mario.image2,0, 0, 63, 86, this.mario.x, this.mario.y, this.mario.width, this.mario.height)
-   // }
-  }
+    }
   
-  
-  
-   _drawSetas(){
+     _drawSetas(){
      this.setas.forEach((elem) => {
        this.ctx.drawImage(elem.image, 0,0,200,200,elem.x, elem.y, elem.width, elem.height);
        elem._fallDown(); 
