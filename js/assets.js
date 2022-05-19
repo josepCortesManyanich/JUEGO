@@ -65,14 +65,14 @@ const marioArrayLeft = [marioLeft1, marioLeft2, marioLeft3, marioLeft4, marioLef
 
 const marioJump = new Image();
 marioJump.src = '../images/marioJ.png';
-const marioJump1 = new Image();
-marioJump1.src = '../images/marioJ.png';
-const marioJump2 = new Image();
-marioJump2.src = '../images/marioJ.png';
-const marioJump3 = new Image();
-marioJump3.src = '../images/marioJ.png';
+// const marioJump1 = new Image();
+// marioJump1.src = '../images/marioJ.png';
+// const marioJump2 = new Image();
+// marioJump2.src = '../images/marioJ.png';
+// const marioJump3 = new Image();
+// marioJump3.src = '../images/marioJ.png';
 
-const marioArrayJump = [marioJump, marioJump1, marioJump2, marioJump3]
+// const marioArrayJump = [marioJump, marioJump1, marioJump2, marioJump3]
 
 ////
 const javaScript1 = new Image();
