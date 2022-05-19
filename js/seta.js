@@ -16,7 +16,6 @@ class Seta{
               this.y ++
             }
         },1500)
-        console.log(`Setas position: ${this.x}, ${this.y}`);
     }
     
     // _assignImage(){

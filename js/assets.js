@@ -51,7 +51,7 @@ const marioArrayRight = [mario2, mario3, mario4, mario5, mario6, mario7, mario8]
 
 ///////
 const marioLeft1 = new Image();
-marioLeft1.src = '../images/marioderecha1.png'
+marioLeft1.src = '../images/marioLeft.png'
 const marioLeft2 = new Image();
 marioLeft2.src = '../images/marioLeft1.png';
 const marioLeft3 = new Image();

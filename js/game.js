@@ -50,7 +50,6 @@ class Game{
    
    _drawJavaScript(){
     this.javascripts.forEach((elem) => {
-      console.log(elem);
       this.ctx.drawImage(elem.image, 0,0,200,200,elem.x, elem.y, elem.width, elem.height);
       elem._fallDown(); 
    })
@@ -79,9 +78,13 @@ class Game{
     document.addEventListener('keydown', (event) => {
       switch (event.code) {
         case 'ArrowLeft':
+          console.log('step counter', this.mario.stepCounter);
+          console.log('image', this.mario.image);
           this.mario.moveLeft();
           break;
         case 'ArrowRight':
+          console.log('step counter', this.mario.stepCounter);
+          console.log('image', this.mario.image);
           this.mario.moveRight();
           break;
         case 'Space':
