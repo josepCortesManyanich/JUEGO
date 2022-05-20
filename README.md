@@ -2,7 +2,7 @@
 
 <!-- When you finish, add a nice screenshot of your game -->
 <!--[<img src="./img/page.png">]()-->
-![<img src= "../img/demomario.png">]
+<img src= "./img/demomario.png">
 
 ## Description
 
