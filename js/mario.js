@@ -27,7 +27,7 @@ class Mario {
     }
     this.image = marioArrayRight[this.stepCounter];
     this.stepCounter++;
-    if (this.stepCounter == marioArrayRight.length - 1) {
+    if (this.stepCounter == marioArrayRight.length  ) {
       this.image = marioArrayRight[0];
       this.stepCounter = 1;
     }
