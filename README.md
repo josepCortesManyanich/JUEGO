@@ -37,4 +37,4 @@ he has to reach all the javascript knowledge. HELP HIM TO GET JS
 <!-- When you finish, add these links and commit -->
 
 - [Presentation slides](file:///C:/Users/jcort/Downloads/slides-ironmariohack%20(1).html)
-- [Deployed game]()
+- [Deployed game](http://127.0.0.1:5555/)
