@@ -37,4 +37,4 @@ he has to reach all the javascript knowledge. HELP HIM TO GET JS
 <!-- When you finish, add these links and commit -->
 
 - [Presentation slides](https://slides.com/d/9feAlns/live)
-- [Deployed game]()
+- [Deployed game](https://josepcortesmanyanich.github.io/Project-1/)
