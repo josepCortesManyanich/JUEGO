@@ -1,8 +1,8 @@
 # IRONMARIOHACKER
 
 <!-- When you finish, add a nice screenshot of your game -->
-<!--[<img src="./img/page.png">]()-->
-<img src= "./img/demomario.png">
+<!--[<img src="./images/demomario.png">]()-->
+
 
 ## Description
 
@@ -36,5 +36,5 @@ he has to reach all the javascript knowledge. HELP HIM TO GET JS
 
 <!-- When you finish, add these links and commit -->
 
-- [Presentation slides](file:///C:/Users/jcort/Downloads/slides-ironmariohack%20(1).html)
-- [Deployed game](http://127.0.0.1:5555/)
+- [Presentation slides](https://slides.com/d/9feAlns/live)
+- [Deployed game]()
